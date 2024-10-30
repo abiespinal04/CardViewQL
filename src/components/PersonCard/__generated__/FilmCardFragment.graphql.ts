@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<6f0fb2511f7585574e091b3f6cfa990a>>
+ * @generated SignedSource<<d50311b7a484e888a5d15f7310bead71>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -11,9 +11,7 @@
 import { ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type FilmCardFragment$data = {
-  readonly director: string | null | undefined;
-  readonly episodeID: number | null | undefined;
-  readonly releaseDate: string | null | undefined;
+  readonly id: string;
   readonly title: string | null | undefined;
   readonly " $fragmentType": "FilmCardFragment";
 };
@@ -32,28 +30,14 @@ const node: ReaderFragment = {
       "alias": null,
       "args": null,
       "kind": "ScalarField",
+      "name": "id",
+      "storageKey": null
+    },
+    {
+      "alias": null,
+      "args": null,
+      "kind": "ScalarField",
       "name": "title",
-      "storageKey": null
-    },
-    {
-      "alias": null,
-      "args": null,
-      "kind": "ScalarField",
-      "name": "episodeID",
-      "storageKey": null
-    },
-    {
-      "alias": null,
-      "args": null,
-      "kind": "ScalarField",
-      "name": "director",
-      "storageKey": null
-    },
-    {
-      "alias": null,
-      "args": null,
-      "kind": "ScalarField",
-      "name": "releaseDate",
       "storageKey": null
     }
   ],
@@ -61,6 +45,6 @@ const node: ReaderFragment = {
   "abstractKey": null
 };
 
-(node as any).hash = "bfb8794089bcf02bc5c015f3b12e66ec";
+(node as any).hash = "e408b0ae439f26591355dff72ca0d828";
 
 export default node;

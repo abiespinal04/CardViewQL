@@ -1,11 +1,22 @@
-import React from 'react';
-import FilmList from '../../components/FilmList';
+import React, {Suspense} from 'react';
+import {graphql, useLazyLoadQuery} from 'react-relay';
+import PeopleList from '../../components/PeopleList';
+import {HomeScreenQuery as HomeScreenQueryType} from './__generated__/HomeScreenQuery.graphql';
+import {Text} from 'react-native';
 
-// This is a simple HomeScreen component that renders a FilmList component
-// This could be a more complex component that includes other UI elements
-// But for the sake of this example, we'll just use this as a wrapper for the FilmList component
-const HomeScreen = () => {
-  return <FilmList />;
+const HomeScreenQuery = graphql`
+  query HomeScreenQuery {
+    ...usePeopleListPaginationFragment
+  }
+`;
+
+const HomeScreen: React.FC = () => {
+  const data = useLazyLoadQuery<HomeScreenQueryType>(HomeScreenQuery, {});
+  return (
+    <Suspense fallback={<Text>loading...</Text>}>
+      <PeopleList root={data} />
+    </Suspense>
+  );
 };
 
 export default HomeScreen;

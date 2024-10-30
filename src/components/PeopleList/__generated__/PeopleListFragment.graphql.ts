@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<af20ea1c782415805d1d3ce9ce6ea64c>>
+ * @generated SignedSource<<6e5f0f92a1fa8d1db6bed66cda21453c>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,13 +10,14 @@
 
 import { ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type FilmListFragment$data = {
-  readonly allFilms: {
+export type PeopleListFragment$data = {
+  readonly allPeople: {
     readonly edges: ReadonlyArray<{
       readonly node: {
+        readonly birthYear: string | null | undefined;
+        readonly gender: string | null | undefined;
         readonly id: string;
-        readonly title: string | null | undefined;
-        readonly " $fragmentSpreads": FragmentRefs<"FilmCardFragment">;
+        readonly name: string | null | undefined;
       } | null | undefined;
     } | null | undefined> | null | undefined;
     readonly pageInfo: {
@@ -24,16 +25,16 @@ export type FilmListFragment$data = {
       readonly hasNextPage: boolean;
     };
   } | null | undefined;
-  readonly " $fragmentType": "FilmListFragment";
+  readonly " $fragmentType": "PeopleListFragment";
 };
-export type FilmListFragment$key = {
-  readonly " $data"?: FilmListFragment$data;
-  readonly " $fragmentSpreads": FragmentRefs<"FilmListFragment">;
+export type PeopleListFragment$key = {
+  readonly " $data"?: PeopleListFragment$data;
+  readonly " $fragmentSpreads": FragmentRefs<"PeopleListFragment">;
 };
 
 const node: ReaderFragment = (function(){
 var v0 = [
-  "allFilms"
+  "allPeople"
 ];
 return {
   "argumentDefinitions": [
@@ -43,7 +44,7 @@ return {
       "name": "after"
     },
     {
-      "defaultValue": 5,
+      "defaultValue": 10,
       "kind": "LocalArgument",
       "name": "first"
     }
@@ -68,23 +69,23 @@ return {
         "path": (v0/*: any*/)
       },
       "fragmentPathInResult": [],
-      "operation": require('./FilmListPaginationQuery.graphql')
+      "operation": require('./PeopleListPaginationQuery.graphql')
     }
   },
-  "name": "FilmListFragment",
+  "name": "PeopleListFragment",
   "selections": [
     {
-      "alias": "allFilms",
+      "alias": "allPeople",
       "args": null,
-      "concreteType": "FilmsConnection",
+      "concreteType": "PeopleConnection",
       "kind": "LinkedField",
-      "name": "__FilmList_allFilms_connection",
+      "name": "__PeopleList_allPeople_connection",
       "plural": false,
       "selections": [
         {
           "alias": null,
           "args": null,
-          "concreteType": "FilmsEdge",
+          "concreteType": "PeopleEdge",
           "kind": "LinkedField",
           "name": "edges",
           "plural": true,
@@ -92,7 +93,7 @@ return {
             {
               "alias": null,
               "args": null,
-              "concreteType": "Film",
+              "concreteType": "Person",
               "kind": "LinkedField",
               "name": "node",
               "plural": false,
@@ -108,13 +109,22 @@ return {
                   "alias": null,
                   "args": null,
                   "kind": "ScalarField",
-                  "name": "title",
+                  "name": "name",
                   "storageKey": null
                 },
                 {
+                  "alias": null,
                   "args": null,
-                  "kind": "FragmentSpread",
-                  "name": "FilmCardFragment"
+                  "kind": "ScalarField",
+                  "name": "birthYear",
+                  "storageKey": null
+                },
+                {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "gender",
+                  "storageKey": null
                 },
                 {
                   "alias": null,
@@ -170,6 +180,6 @@ return {
 };
 })();
 
-(node as any).hash = "d84ec2324802f7ad571ac35a32ce5acb";
+(node as any).hash = "6fe573f719c098eaa4d1d36a5deafe9c";
 
 export default node;

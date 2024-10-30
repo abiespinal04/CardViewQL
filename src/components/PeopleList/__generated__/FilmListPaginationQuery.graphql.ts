@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e5d3c910d1fd4b35185aa5e0763aa927>>
+ * @generated SignedSource<<a70d9b6ad602b5aea1f0b13d932be6d6>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -30,7 +30,7 @@ var v0 = [
     "name": "after"
   },
   {
-    "defaultValue": 5,
+    "defaultValue": 100,
     "kind": "LocalArgument",
     "name": "first"
   }
@@ -72,15 +72,15 @@ return {
       {
         "alias": null,
         "args": (v1/*: any*/),
-        "concreteType": "FilmsConnection",
+        "concreteType": "PeopleConnection",
         "kind": "LinkedField",
-        "name": "allFilms",
+        "name": "allPeople",
         "plural": false,
         "selections": [
           {
             "alias": null,
             "args": null,
-            "concreteType": "FilmsEdge",
+            "concreteType": "PeopleEdge",
             "kind": "LinkedField",
             "name": "edges",
             "plural": true,
@@ -88,7 +88,7 @@ return {
               {
                 "alias": null,
                 "args": null,
-                "concreteType": "Film",
+                "concreteType": "Person",
                 "kind": "LinkedField",
                 "name": "node",
                 "plural": false,
@@ -104,28 +104,21 @@ return {
                     "alias": null,
                     "args": null,
                     "kind": "ScalarField",
-                    "name": "title",
+                    "name": "name",
                     "storageKey": null
                   },
                   {
                     "alias": null,
                     "args": null,
                     "kind": "ScalarField",
-                    "name": "episodeID",
+                    "name": "birthYear",
                     "storageKey": null
                   },
                   {
                     "alias": null,
                     "args": null,
                     "kind": "ScalarField",
-                    "name": "director",
-                    "storageKey": null
-                  },
-                  {
-                    "alias": null,
-                    "args": null,
-                    "kind": "ScalarField",
-                    "name": "releaseDate",
+                    "name": "gender",
                     "storageKey": null
                   },
                   {
@@ -181,23 +174,23 @@ return {
         "args": (v1/*: any*/),
         "filters": null,
         "handle": "connection",
-        "key": "FilmList_allFilms",
+        "key": "FilmList_allPeople",
         "kind": "LinkedHandle",
-        "name": "allFilms"
+        "name": "allPeople"
       }
     ]
   },
   "params": {
-    "cacheID": "9b34dcc3c592a28ea71b19351c433be0",
+    "cacheID": "f2e1845ba20eaf3baf7dcc15e6b7a61a",
     "id": null,
     "metadata": {},
     "name": "FilmListPaginationQuery",
     "operationKind": "query",
-    "text": "query FilmListPaginationQuery(\n  $after: String\n  $first: Int = 5\n) {\n  ...FilmListFragment_2HEEH6\n}\n\nfragment FilmCardFragment on Film {\n  title\n  episodeID\n  director\n  releaseDate\n}\n\nfragment FilmListFragment_2HEEH6 on Root {\n  allFilms(first: $first, after: $after) {\n    edges {\n      node {\n        id\n        title\n        ...FilmCardFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}\n"
+    "text": "query FilmListPaginationQuery(\n  $after: String\n  $first: Int = 100\n) {\n  ...FilmListFragment_2HEEH6\n}\n\nfragment FilmListFragment_2HEEH6 on Root {\n  allPeople(first: $first, after: $after) {\n    edges {\n      node {\n        id\n        name\n        birthYear\n        gender\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "d84ec2324802f7ad571ac35a32ce5acb";
+(node as any).hash = "2848f21c5c70919333f593223e917c66";
 
 export default node;

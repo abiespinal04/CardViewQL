@@ -1,4 +1,3 @@
-// src/relay/RelayEnvironment.ts
 import { Environment, Network, RecordSource, Store, RequestParameters, Variables } from 'relay-runtime';
 
 async function fetchQuery(operation: RequestParameters, variables: Variables) {
