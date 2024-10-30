@@ -65,10 +65,12 @@ export default function FilmList(props) {
 
 const styles = StyleSheet.create({
   listContainer: {
+    backgroundColor: 'red',
     paddingBottom: 16,
   },
   errorContainer: {
     flex: 1,
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
   },
