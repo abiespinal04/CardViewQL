@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CardViewQL
 
 CardViewQL is a React Native application that allows users to explore data from the Star Wars universe. This app leverages **GraphQL** and **Relay** for efficient data fetching, with data sourced from the [Star Wars GraphQL API](https://swapi-graphql.netlify.app/.netlify/functions/index).
@@ -63,3 +64,9 @@ src
 ![Simulator Screenshot - iPhone 15 Pro Max - 2024-11-03 at 20 04 27](https://github.com/user-attachments/assets/4251cd78-3cf3-4213-9675-3f73197ee26e)
 
 
+<<<<<<< HEAD
+=======
+=======
+# CardViewQL
+>>>>>>> bd95bf2 (Initial commit)
+>>>>>>> a165916 (Update README.md)
