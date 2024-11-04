@@ -2,8 +2,8 @@ import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Text, StyleSheet, Pressable, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../navigation/stacks/HomeStackNavigator';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../navigation/stacks/HomeStackNavigator';
 
 export type PersonType =
   | {
@@ -20,7 +20,8 @@ export type PersonCardProps = {
 };
 
 const PersonCard: React.FC<PersonCardProps> = ({person}) => {
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [liked, setLiked] = useState(false);
 
   const navigateToPerson = React.useCallback(() => {
@@ -32,10 +33,18 @@ const PersonCard: React.FC<PersonCardProps> = ({person}) => {
   }, [liked]);
 
   return (
-    <Pressable onPress={navigateToPerson} style={styles.card}>
+    <Pressable
+      testID="person-card"
+      onPress={navigateToPerson}
+      style={styles.card}>
       <View style={styles.cardHeader}>
-        <Text style={styles.name}>{person?.name}</Text>
-        <Pressable onPress={toggleLike} style={styles.likeButton}>
+        <Text testID="person-name" style={styles.name}>
+          {person?.name}
+        </Text>
+        <Pressable
+          testID="like-button"
+          onPress={toggleLike}
+          style={styles.likeButton}>
           <Icon name="heart" size={20} color={liked ? 'red' : 'gray'} />
         </Pressable>
       </View>
@@ -43,11 +52,17 @@ const PersonCard: React.FC<PersonCardProps> = ({person}) => {
       <View style={styles.infoContainer}>
         <View style={styles.infoRow}>
           <Icon name="birthday-cake" size={16} color="#555" />
-          <Text style={styles.infoText}> {person?.birthYear}</Text>
+          <Text testID="person-birth-year" style={styles.infoText}>
+            {' '}
+            {person?.birthYear}
+          </Text>
         </View>
         <View style={styles.infoRow}>
           <Icon name="user" size={16} color="#555" />
-          <Text style={styles.infoText}> {person?.gender}</Text>
+          <Text testID="person-gender" style={styles.infoText}>
+            {' '}
+            {person?.gender}
+          </Text>
         </View>
       </View>
     </Pressable>
