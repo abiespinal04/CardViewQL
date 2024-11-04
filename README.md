@@ -34,6 +34,7 @@ open -a /Applications/Android\ Studio.app
 ```
 
 ### 2. Project Structure
+```
 src
 ├── components             # Reusable UI components
 │   ├── PeopleList         # Component for displaying a list of people
@@ -56,5 +57,9 @@ src
     │   └── index.tsx
     ├── HomeScreen         # Main home screen listing Star Wars entities
     └── PersonDetailsScreen # Screen to show details of a selected person
-
+```
 ### 3. Screenshots
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-11-03 at 19 56 10](https://github.com/user-attachments/assets/3bb8dfc4-7975-4a7d-a768-cba4dca1d248)
+![Simulator Screenshot - iPhone 15 Pro Max - 2024-11-03 at 20 04 27](https://github.com/user-attachments/assets/4251cd78-3cf3-4213-9675-3f73197ee26e)
+
+
